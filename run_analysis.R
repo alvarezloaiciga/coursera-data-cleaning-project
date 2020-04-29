@@ -50,5 +50,5 @@ combinedDataSets <- function() {
 subjectActivitySummary <- function() {
   dataSet <- tidyDataSet() %>% tbl_df() %>% group_by(subject, activity) %>% summarise_at(vars(-group_cols()), mean)
   write.table(dataSet, "subject_activity_summary.txt", row.name=FALSE)
-  names(dataSet)
+  dataSet
 }
